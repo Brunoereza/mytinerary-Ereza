@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from '../image/Logo2.png'
+
 
 
 
@@ -42,7 +42,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
            <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-             <img src={Logo} alt='logo' />  
+           <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
            </Box>
            
 
@@ -85,7 +85,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, width:"100vw", justifyContent:"center", padding:1 }}>
-          <img src={Logo} alt='logo' /> 
+          <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', width:"100vw", justifyContent:"center" } }}>
             {pages.map((page) => (
