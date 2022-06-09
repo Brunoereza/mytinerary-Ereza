@@ -2,11 +2,11 @@
 html,
 body {
   position: relative;
-  height: 100%;
+  
 }
 
-body {
-  background: #eee;
+body{
+  height: 100%;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -15,17 +15,21 @@ body {
 }
 
 .swiper {
-  width: 100%;
+  width: 90vw;
   height: 30rem;
-  padding-top: 2rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
+}
+.img-carrousel{
+  height: 35vh;
+  width: 35vw;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #8d6e63; 
   height: calc((100% - 30px) / 2) !important;
 
   /* Center slide text vertically */

@@ -1,0 +1,83 @@
+/* From uiverse.io by @nikk7007 */
+.button-hero {
+    padding: 0.8em 1.8em;
+    border: 2px solid #8d6e63;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: black;
+   }
+   
+   .button-hero::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #8d6e63;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .button-hero:hover::before {
+    width: 105%;
+   }
+   
+   .button-hero:hover {
+    color: #111;
+   }
+
+   .container-text-button{
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       
+   }
+
+   .text-button{
+       margin-top: 1rem;
+       background-color: brown;
+       width: 40vw;
+       height: 40vh;
+       text-align: center;
+       font-family: 'Dancing Script', cursive !important;
+       font-size: 20px;
+   }
+
+
+   @media screen and (max-width: 768px) {
+    .text-button{
+        margin-top: 1rem;
+        background-color: brown;
+        width: 40vw;
+        height: 40vh;
+        text-align: center;
+        font-family: 'Dancing Script', cursive !important;
+        font-size: 15px;
+    }
+   }
+
+
+   @media screen and (max-width: 768px) {
+    .text-button{
+        margin-top: 1rem;
+        background-color: brown;
+        width: 40vw;
+        height: 40vh;
+        text-align: center;
+        font-family: 'Dancing Script', cursive !important;
+        font-size: 12.5px;
+    }
+   }
+   

@@ -2,7 +2,27 @@
 
 .App {
   text-align: center;
+  
 }
+
+/* .fondo{
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+} */
+
+.conteiner-title{
+  color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Dancing Script', cursive !important;
+  
+}
+
 
 .MuiPaper-root{
   background-color: #8d6e63 !important;

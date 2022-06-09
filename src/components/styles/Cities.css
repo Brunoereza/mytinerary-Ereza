@@ -1,0 +1,10 @@
+.Background-cities{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-image: url('../turistas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain !important;
+}
