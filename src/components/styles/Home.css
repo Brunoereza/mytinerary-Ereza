@@ -7,6 +7,7 @@ h1{
     flex-direction: column;
     flex-grow: 1;
     background-image: url('../turistas.jpg');
+    /* color: rgba(255, 255, 255, 0.438); */
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain !important;
