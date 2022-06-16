@@ -15,16 +15,14 @@ body{
 }
 
 .swiper {
-  width: 90vw;
-  height: 30rem;
+  width: 80vw;
+  height: 40rem;
+  padding-bottom: 2rem;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
-.img-carrousel{
-  height: 35vh;
-  width: 35vw;
-}
+
 
 .swiper-slide {
   text-align: center;
@@ -46,3 +44,8 @@ body{
   -webkit-align-items: center;
   align-items: center;
 }
+
+
+
+
+ 

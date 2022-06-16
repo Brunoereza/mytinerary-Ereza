@@ -2,7 +2,7 @@ h1{
     font-size: 3rem;
 }
 .Background{
-
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -12,3 +12,15 @@ h1{
     background-size: cover;
     object-fit: contain !important;
 }
+
+
+
+@media screen and (min-width: 2000px){
+    .Background{
+        min-height: 95vh;
+    }
+    .img-carrousel{
+      height: 19vh;
+      width: 35vw;
+    }
+}   

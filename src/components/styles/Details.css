@@ -1,8 +1,13 @@
 .conteiner-card-details{
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+    background-image: url('../turistas.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* object-fit: contain !important; */
+    background-attachment: fixed;
   }

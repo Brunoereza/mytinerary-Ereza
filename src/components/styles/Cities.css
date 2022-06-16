@@ -1,4 +1,29 @@
-.Background-cities{
+.conteiner-cards{
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-image: url('../turistas.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  /* object-fit: contain !important; */
+  background-attachment: fixed;
+  }
+  .cards{
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    
+
+  }
+
+/* .Background-cities{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -7,4 +32,4 @@
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain !important;
-}
+} */

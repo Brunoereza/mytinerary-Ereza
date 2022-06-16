@@ -1,17 +1,34 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import Data from '../data'
+import axios from 'axios'
 import '../styles/Details.css'
 
 
 function Details() {
+
+
   const { id } = useParams()
-  let cardsDitails = Data.find(city => city.id === (id))
+
+
+  const [cities, setCities] = useState([])
+
+  useEffect(()=>{
+      axios.get("http://localhost:4000/api/cities")
+      .then(response=> 
+        {
+          setCities(response.data.response.cities)
+          console.log(response)
+        })
+  },[])
+  let cardsDitails = cities.find(city => city._id === (id))
+  console.log(cities)
+  console.log(cardsDitails)
+
   // console.log(cardsDitails)
   return (
     <div className="conteiner-card-details">
@@ -19,19 +36,19 @@ function Details() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image={cardsDitails.image}
-          alt={cardsDitails.name}
+          height="240"
+          image={cardsDitails?.image}
+          alt={cardsDitails?.name}
         />
         <CardContent>
           <Typography>
-            {cardsDitails.name}
+            {cardsDitails?.name}
           </Typography>
           <Typography>
-            {cardsDitails.country}
+            {cardsDitails?.country}
           </Typography>
           <Typography>
-            Detalle
+            {cardsDitails?.description}
           </Typography>
         </CardContent>
       </CardActionArea>

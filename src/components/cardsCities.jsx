@@ -10,10 +10,14 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 
 export default function cardsCities({ cardFilter }) {
+
+  
   return (
-    cardFilter.map(city => {
-      return (
-        <Card sx={{ maxWidth: 345 }} key={city.id}>
+
+    <div className="conteiner-cards">
+          
+      {cardFilter.map(city => (
+        <Card className='cards' sx={{ maxWidth: 345 }} key={city._id}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -31,7 +35,7 @@ export default function cardsCities({ cardFilter }) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <LinkRouter to={`/cities/details/${city.id}`}>
+            <LinkRouter to={`/cities/details/${city._id}`}>
               <Button size="small" color="primary">
                 View more
               </Button>
@@ -39,8 +43,10 @@ export default function cardsCities({ cardFilter }) {
           </CardActions>
         </Card>
       )
-    }
-    )
+      )
+      }
+    </div>
+
   );
 }
 

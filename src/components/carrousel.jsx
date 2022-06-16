@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -36,8 +36,8 @@ export default function Carrousel() {
         className="mySwiper"
       >
         {Data.map((Data)=>(
-        <SwiperSlide key={Data.id}>
-          <img className="img-carrousel" src={Data.image} alt={Data.name} />
+        <SwiperSlide key={Data.id} style={{backgroundImage:`url("${Data.image}")`, backgroundPosition:"center", backgroundSize:"cover"}}>
+          {/* <img className="img-carrousel" src={Data.image} alt={Data.name} /> */}
           {/* <h3 className="card-title align-baseline text-sm tracking-tight font-thin md:font-bold text-gray-900 sm:text-base md:text-3x1">
           <span className=" block x1:inline">
             {Data.name} <br />
