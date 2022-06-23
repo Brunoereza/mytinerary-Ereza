@@ -33,3 +33,34 @@
     background-size: cover;
     object-fit: contain !important;
 } */
+/* From uiverse.io by @Alaner-xs */
+.input {
+  background-color: #383838;
+  border: 1ex solid none;
+  border-top-width: 0.2rem;
+  margin: 0;
+  padding: 0;
+  color: #383838;
+  word-wrap: break-word;
+  outline: 7px solid #383838;
+  height: 20px;
+  font-size: 17px;
+  text-align: center;
+  transition: all 1s;
+  max-width: 190px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .input:hover {
+  border-top-width: 0.2em;
+  background-color: #f1e8e8;
+ }
+ 
+ .input:focus {
+  border-top-width: 0.2em;
+  background-color: #f1e8e8;
+ }
+ .inputText{
+  background-color: #8d6e63;
+ }

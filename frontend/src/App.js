@@ -8,10 +8,17 @@ import Footer from './components/Footer';
 import {Routes, Route} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Cities from './components/pages/Cities';
-import Details from './components/pages/Details'
+import Details from './components/pages/Details';
+import {connect} from "react-redux"
+import {useEffect} from "react"
+import citiesActions from "./redux/actions/citiesActions"
 
 
-function App() {
+
+function App(props) {
+  useEffect (()=>{
+    props.getCities()
+  },[])
   return (
     <>
         <div className="App">
@@ -33,5 +40,8 @@ function App() {
 
   );
 }
+const mapDispatchToProps = {
+  getCities: citiesActions.getCities
+}
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);

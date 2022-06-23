@@ -123,7 +123,7 @@
        }
    }
    
-   @media screen and (max-width: 400px){
+   @media screen and (max-width: 425px){
     .button-hero {
         padding: 0.1em 0.4em;
         border: 2px solid #8d6e63;
@@ -138,4 +138,14 @@
         font-family: inherit;
         color: black;
        }
+
+       .text-button{
+        margin-top: 1rem;
+        background-color: brown;
+        width: 40vw;
+        height: 40vh;
+        text-align: center;
+        font-family: 'Dancing Script', cursive !important;
+        font-size: 14px;
+    }
    }

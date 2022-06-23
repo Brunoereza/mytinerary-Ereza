@@ -1,50 +1,40 @@
 import React, { useEffect, useState } from "react";
 // import '../styles/Cities.css'
 import Cards from '../cardsCities'
-// import Data from '../data'
 import NotResults from "../NotResults";
-import axios from 'axios'
-// import { search } from "../../../../routes/routes";
+import {connect} from "react-redux"
 
 
 
 
 
-function Cities() {
-    const [cityFilter, setCityFilter]= useState()
+function Cities(props) {
+
     const [inputValue, setInputValue]= useState ("")
 
-     const [cities, setCities] = useState()
 
-     useEffect(()=>{
-         axios.get("http://localhost:4000/api/cities")
-         .then(response=> setCities(response.data.response.cities))
-     },[])
+    let cityFil = props.cities?.filter(city=> city.name.toLowerCase().startsWith(inputValue.trim().toLowerCase()))
 
-     useEffect(() =>{
-        let cityFil = cities?.filter(city=> city.name.toLowerCase().startsWith(inputValue.trim().toLowerCase()))
-        setCityFilter(cityFil)
-     },[inputValue, cities])
-
-    // let filterInput = city.filter((city)=> {
-    // return city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim())
-    
-    //    }
-    // )
     
     return(
         <>
           <div className="inputText">
-              <input onKeyUp={(e)=>{setInputValue(e.target.value)}} type="text" title="serch"></input>
+              <input onKeyUp={(e)=>{setInputValue(e.target.value)}} type="text" className="input" title="serch"></input>
           </div>
           <div>
-              {cityFilter?.length > 0 ? (<Cards cardFilter={cityFilter}/>): (<NotResults/>)}
+              {cityFil?.length > 0 ? (<Cards cardFilter={cityFil}/>): (<NotResults/>)}
           </div>
         </>
     );
 }
+const mapStateToProps = (state) => {
+    return{
+        cities: state.citiesReducer.cities, 
+        auxiliar: state.citiesReducer.auxiliar,
+    }
+}
 
-export default Cities
+export default connect(mapStateToProps, null)(Cities)
 
 
 

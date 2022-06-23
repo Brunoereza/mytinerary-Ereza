@@ -1,7 +1,13 @@
 const Router = require('express').Router();
 
 const citiesControllers = require('../controllers/citiesControllers');
+const intinerariesControllers = require('../controllers/intinerariesControllers');
+
+
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
+const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
+
+
 
 Router.route('/cities')
 .get(getCities)
@@ -13,5 +19,22 @@ Router.route('/cities/:id')
 .get(getOneCity)
 Router.route("/multiplesCities")
 .post(multiplesCities)
+
+//ruta intineraries
+
+Router.route('/intinerary')
+.get(getIntineraries)
+.post(addIntinerary)
+
+Router.route('/intinerary/:id')
+.delete(removeIntinerary)
+.put(modifyIntinerary)
+.get(getOneIntinerary)
+
+Router.route("/multiplesIntineraries")
+.post(multiplesIntineraries)
+
+Router.route("/intinerarybycity/:id")
+.get(getItineraryByCity)
 
 module.exports = Router
