@@ -6,27 +6,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import axios from 'axios'
-import '../styles/Details.css'
+import '../styles/Details.css';
+import {useDispatch, useSelector} from 'react-redux';
+import citiesActions from '../../redux/actions/citiesActions';
+import intinerariesActions from "../../redux/actions/intinerariesActions";
+import Intinerary from "../Intinerary";
 
 
 function Details() {
-
-
   const { id } = useParams()
-
-
-  const [cities, setCities] = useState([])
+  const dispatch = useDispatch()
 
   useEffect(()=>{
-      axios.get("http://localhost:4000/api/cities")
-      .then(response=> 
-        {
-          setCities(response.data.response.cities)
-          console.log(response)
-        })
-  },[])
-  let cardsDitails = cities.find(city => city._id === (id))
-  console.log(cities)
+      dispatch(citiesActions.getOneCity(id))
+  },[id])
+  useEffect(()=>{
+    dispatch(intinerariesActions.getItineraryByCity(id))
+},[id])
+  let cardsDitails = useSelector(state=>state.citiesReducer.oneCity)
+  let intineraries = useSelector(state=>state.intinerariesReducer.intineraries)
   console.log(cardsDitails)
 
   // console.log(cardsDitails)
@@ -53,8 +51,11 @@ function Details() {
         </CardContent>
       </CardActionArea>
     </Card>
+    <div className="conteiner-itinerary">
+      {/* {intineraries.map(intinerary => <Intinerary key={intinerary._id} data={intinerary} />)} */}
+      {intineraries.length > 0 ? intineraries.map(intinerary => <Intinerary key={intinerary._id} data={intinerary}/>) : <Typography sx={{fontSize:"2rem",margin:"5rem"}}>NO ITINERARIES YET!</Typography>}
     </div>
-
+    </div>
   )
 }
 export default Details

@@ -1,8 +1,10 @@
 .conteiner-card-details{
     min-height: 90vh;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: space-around;
     justify-content: center;
     align-items: center;
     background-image: url('../turistas.jpg');
@@ -11,3 +13,17 @@
     /* object-fit: contain !important; */
     background-attachment: fixed;
   }
+.conteiner-itinerary{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.MuiCardContent-root{
+  padding-top:1rem ;
+}
+.avatar{
+  position: center;
+  object-fit: cover;
+  height: 50px;
+}

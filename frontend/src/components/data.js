@@ -53,14 +53,14 @@ var Data=[
         "id":"8",
         "name":"Buenos Aires",
         "country":"Argentina",
-        "description":"es la capital y ciudad más poblada de la República Argentina. Esta metrópolis es una ciudad autónoma que constituye uno de los 24 distritos, o «jurisdicciones de primer orden»12​ que conforman el país. ",
+        "description":"Es la capital y ciudad más poblada de la República Argentina. Esta metrópolis es una ciudad autónoma que constituye uno de los 24 distritos, o «jurisdicciones de primer orden»12​ que conforman el país. ",
         "image": "https://www.passporttravelmagazine.com/wp-content/uploads/2017/01/1-13.jpg"
     },
     {
         "id":"9",
         "name":"Tokyo",
         "country":"Japan",
-        "description":" es la capital de facto de Japón, ubicada en el centro este de la isla de Honshu, concretamente en la región de Kantō. En conjunto es una de las 47 prefecturas de Japón. Es el centro de la política, economía, educación, comunicación y cultura del país.",
+        "description":" Es la capital de facto de Japón, ubicada en el centro este de la isla de Honshu, concretamente en la región de Kantō. En conjunto es una de las 47 prefecturas de Japón. Es el centro de la política, economía, educación, comunicación y cultura del país.",
         "image": "https://viajes.nationalgeographic.com.es/medio/2021/01/26/templo-de-asakusa_46a4b335_1200x630.jpg"
     },
     {
@@ -75,13 +75,13 @@ var Data=[
         "name":"Amsterdam",
         "country":"Holland",
         "description":"Es la capital oficial del Reino de los Países Bajos. La ciudad está situada entre la bahía del IJ, al norte, y a las orillas del río Amstel, al sureste. ",
-        "image": "https://www.cordobaturismo.gov.ar/wp-content/uploads/2018/07/Ciudad-de-C%C3%B3rdoba-1.jpg"
+        "image": "https://th.bing.com/th/id/OIP.anYpf-VBPdKv7olUvpI-tgHaE6?pid=ImgDet&rs=1"
     },
     {
         "id":"12",
         "name":"London",
         "country":"England",
-        "description":"es la capital y mayor ciudad de Inglaterra y del Reino Unido. Situada a orillas del río Támesis, Londres es un importante asentamiento humano desde que fue fundada por los romanos con el nombre de Londinium hace casi dos milenios",
+        "description":"Es la capital y mayor ciudad de Inglaterra y del Reino Unido. Situada a orillas del río Támesis, Londres es un importante asentamiento humano desde que fue fundada por los romanos con el nombre de Londinium hace casi dos milenios",
         "image": "https://cdn2.civitatis.com/reino-unido/londres/guia/distritos.jpg"
     }
     

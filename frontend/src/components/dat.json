@@ -1,15 +1,105 @@
 {
     "data": [
 
+
                 {
-                    "name": "visit the Jewish quarter of Anne Frank",
-                    "author": "Jenna Collins",
-                    "authorimage": "/assets/JennaCollins.jpg",
-                    "description": "Discover the history of World War II in Amsterdam and follow in the footsteps of Anne Frank on this tour of the Jewish Quarter.",
+                    "name":"City Tour for Nueva Cordoba",
+                    "publisher": "Maria Teresa",
+                    "imagePublisher":"https://images.generated.photos/yZH1oFGLhXCUiDdR_puBxR4OCVrabBm7ewe_M3Zkoes/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjkzMjc3LmpwZw.jpg",
                     "price":"💵💵",
-                    "duration":"3",
-                    "hashtags":"#visitamsterdam, #annefrank, #jewishquarter",
+                    "duration":"4",
+                    "hashtags":"#nuevacordoba, #cordoba, #cuarteto",
                     "likes":"",
                     "activities":"",
-                    "city":"Amsterdam"
-                }]}
+                    "city":"62a98596d3a1b967d0735c3c"
+                },
+                {
+                    "name":"The Great Wall Marathon",
+                    "publisher": "Ali Jalayer",
+                    "imagePublisher":"https://images.generated.photos/19uBAWqOIoXeQwFp39MS8aeup95g5HEvXI_7Jtzh2QU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDk1MTMzLmpwZw.jpg",
+                    "price":"💵💵💵",
+                    "duration":"7",
+                    "hashtags":"#wallofchina, #china, #rice",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c3e"
+                },
+                {
+                    "name":"Blue Mountains Day Trip from Sydney",
+                    "publisher": "Ainoa Chen",
+                    "imagePublisher":"https://images.generated.photos/YmHN7nDtlgu86SLOiZFtA_AXDsSRHZOIAuPZ6inMEEo/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Njc3Mjg0LmpwZw.jpg",
+                    "price":"💵💵💵💵",
+                    "duration":"5",
+                    "hashtags":"#sydney, #denger, #kangaroos",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c3d"
+                },
+                {
+                    "name":"Private Full-Day Tour: Essential Athens Highlights Plus Cape Sunion and Temple of Poseidon",
+                    "publisher": "Emiliano Contreras",
+                    "imagePublisher":"https://images.generated.photos/y79BPOfvyQWHQE1MDXdkfH06DY3_GObtRE3oaJGvoLI/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTkzMjcxLmpwZw.jpg",
+                    "price":"💵",
+                    "duration":"7",
+                    "hashtags":"#greece, #olympus, #musaka",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c41"
+                },
+                {
+                    "name":"Santorini Caldera Tour with Greek Food",
+                    "publisher": "Flynn Chapman",
+                    "imagePublisher":"https://images.generated.photos/4p4v6tHPetb6M-QkbYnrikH_YWIfwAV1MmjIvyzOqcw/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy8wODY2/NzM5LmpwZw.jpg",
+                    "price":"💵💵💵💵",
+                    "duration":"10",
+                    "hashtags":"#greece, #beaches, #tourist",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c41"
+                },
+                {
+                    "name":"Half-day Stonehenge tour with audio guide",
+                    "publisher": "Laila Wright",
+                    "imagePublisher":"https://images.generated.photos/J0P0U3BNei6YzvfQbZZkzc3tq9kUDukszSMSUJ-IJDs/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjEyNjY4LmpwZw.jpg",
+                    "price":"💵💵",
+                    "duration":"4",
+                    "hashtags":"#bigben, #tamesis, #england",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c47"
+                },
+                {
+                    "name":"Tour por el estadio de Wembley",
+                    "publisher": "Diego Armando Maradona",
+                    "imagePublisher":"https://th.bing.com/th/id/R.435a4aaf1af93883f33033630029f68a?rik=%2fx%2foDtfHsIqPBg&pid=ImgRaw&r=0",
+                    "price":"💵💵",
+                    "duration":"21",
+                    "hashtags":"#dolidos, #PeterShilton, #TheHandofGod",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c47"
+                },
+                {
+                    "name":"Customizable Food Tour of Palermo Viejo",
+                    "publisher": "Shad Jebali",
+                    "imagePublisher":"https://images.generated.photos/Ie5KBryy4uH3RUA-HvYiTI8rkReyPe1Mar1UsMtIUeI/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzEzNTYwLmpwZw.jpg",
+                    "price":"💵💵",
+                    "duration":"7",
+                    "hashtags":"#buenosaires, #argentina, #food",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c43"
+                },
+                {
+                    "name":"River Tour: conocé el Museo de River Plate y su estadio, el Monumental.",
+                    "publisher": "Luca Vangone",
+                    "imagePublisher":"https://images.generated.photos/OgvS6wMuPXFqlMGSOkks_lInsuB3zF6VfYXpZSS1RGw/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTQ3NDY0LmpwZw.jpg",
+                    "price":"💵💵",
+                    "duration":"15",
+                    "hashtags":"#football, #riverplate, #lionelmessi",
+                    "likes":"",
+                    "activities":"",
+                    "city":"62a98596d3a1b967d0735c43"
+                }
+                
+                ]}

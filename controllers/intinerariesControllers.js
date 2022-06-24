@@ -31,13 +31,11 @@ const intinerariesControllers = {
     }
     ,
     addIntinerary: async (req, res) => {
-        const { name, publisher, imagePublisher, price, duration, hashtags, likes, activities, city } = req.body.data
+        const {  publisher, imagePublisher, price, duration, hashtags, likes, activities, city } = req.body.data
         let intinerary
         let error = null
         try {
             intinerary = await new Intinerary({
-
-                name: name,
                 publisher: publisher,
                 imagePublisher: imagePublisher,
                 price: price,

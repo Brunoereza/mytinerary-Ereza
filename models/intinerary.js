@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose')
 
 const intinerarySchema = new mongoose.Schema({
-    name:{type:String, required:true},
+    
     publisher:{type:String, required:true},
     imagePublisher:{type:String, required:true},
     price:{type:String, required:true},
