@@ -12,12 +12,15 @@ import Details from './components/pages/Details';
 import {connect} from "react-redux"
 import {useEffect} from "react"
 import citiesActions from "./redux/actions/citiesActions"
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 
 
 
 function App(props) {
   useEffect (()=>{
     props.getCities()
+    // eslint-disable-next-line
   },[])
   return (
     <>
@@ -32,6 +35,8 @@ function App(props) {
                 <Route path='/' element={<Home />} />
                 <Route path='/cities' element={<Cities />} />
                 <Route path='/cities/details/:id' element={<Details />} />
+                <Route path='/signin' element={<SignIn/>} />
+                <Route path='/signup' element={<SignUp/>} />
               </Routes>
 
                <Footer />

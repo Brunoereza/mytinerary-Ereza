@@ -12,6 +12,6 @@ const intinerarySchema = new mongoose.Schema({
     city: {type: mongoose.Types.ObjectId, ref: "Cities"}
     
 })
-console.log(mongoose)
+
 const Intinerary = mongoose.model('intinerary', intinerarySchema)
 module.exports=Intinerary

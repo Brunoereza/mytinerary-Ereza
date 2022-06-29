@@ -48,7 +48,7 @@ export default function Intinerary({data}) {
         avatar={
           <Avatar aria-label="recipe">
              <img src={data.imagePublisher} className="avatar" alt='avatar' />
-            {/* <p>{data.imagePublisher}</p> */}
+           
           </Avatar>
         }
         action={
@@ -57,14 +57,9 @@ export default function Intinerary({data}) {
           </IconButton>
         }
         title= {data.publisher}
-        // subheader="September 14, 2016"
+        
       />
-      {/* <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      /> */}
+
       <CardContent>
         <Typography variant="body2" color="text.secondary">
          {data.price}

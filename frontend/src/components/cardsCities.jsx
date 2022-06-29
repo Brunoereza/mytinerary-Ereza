@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import './styles/Cities.css'
 import { Link as LinkRouter } from 'react-router-dom'
-// import  Data from './data'
+
 
 
 export default function cardsCities({ cardFilter }) {

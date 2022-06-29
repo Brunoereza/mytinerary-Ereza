@@ -2,11 +2,12 @@ const Router = require('express').Router();
 
 const citiesControllers = require('../controllers/citiesControllers');
 const intinerariesControllers = require('../controllers/intinerariesControllers');
+const usersControllers = require('../controllers/usersControllers')
 
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
 const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
-
+const {signUpUsers, signInUsers} = usersControllers
 
 
 Router.route('/cities')
@@ -36,5 +37,13 @@ Router.route("/multiplesIntineraries")
 
 Router.route("/intinerarybycity/:id")
 .get(getItineraryByCity)
+
+//ruta signUsers
+
+Router.route("/signup")
+.post(signUpUsers)
+
+Router.route("/signin")
+.post(signInUsers)
 
 module.exports = Router

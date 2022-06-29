@@ -11,14 +11,17 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import {Link as LinkRouter} from 'react-router-dom';
+import { Link as LinkRouter } from 'react-router-dom';
 
 
 
-const pages = [{nombre:'Home', to:'/'},
-  {nombre:'Cities', to:'/cities' }
- ];
-const settings = ['Profile', 'Account', 'SignIn', 'Logout'];
+const pages = [{ nombre: 'Home', to: '/' },
+{ nombre: 'Cities', to: '/cities' }
+];
+const settings = [
+  { nombre: "Sign In", to: "/signin" },
+  { nombre: "Sign Up", to: "/signup" }
+];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,13 +43,13 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor:"#8d6e63"}}>
+    <AppBar position="static" sx={{ backgroundColor: "#8d6e63" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-           <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
-           </Box>
-           
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+            <img src={process.env.PUBLIC_URL + '/image/Logo2.png'} alt='logo' />
+          </Box>
+
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -77,28 +80,28 @@ const ResponsiveAppBar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
-              
+
             >
               {pages.map((page, index) => (
                 <LinkRouter to={page.to} key={index}>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography className='NavBarFont' textAlign="center">{page.nombre}</Typography>
-                </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography className='NavBarFont' sx={{textAlign: 'center'}}>{page.nombre}</Typography>
+                  </MenuItem>
                 </LinkRouter>
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, width:"100vw", justifyContent:"center", padding:1 }}>
-          <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, width: "100vw", justifyContent: "center", padding: 1 }}>
+            <img src={process.env.PUBLIC_URL + '/image/Logo2.png'} alt='logo' />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', width:"100vw", justifyContent:"center" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', width: "100vw", justifyContent: "center" } }}>
             {pages.map((page, index) => (
               <LinkRouter to={page.to} key={index}>
-             <Button className='NavBarFont' onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page.nombre}
-              </Button>
+                <Button className='NavBarFont' onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page.nombre}
+                </Button>
               </LinkRouter>
             ))}
           </Box>
@@ -125,11 +128,13 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography className='NavBarFont' textAlign="center">{setting}</Typography>
-                </MenuItem>
+              {settings.map((setting, index) => (
+                <LinkRouter key={index} to={setting.to} onClick={handleCloseUserMenu}>
+                  <Button style= {{textAlign: 'center'}}>{setting.nombre}</Button>
+                </LinkRouter>
               ))}
+
+
             </Menu>
           </Box>
         </Toolbar>

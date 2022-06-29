@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import '../styles/Cities.css'
 import Cards from '../cardsCities'
 import NotResults from "../NotResults";
 import {connect} from "react-redux"

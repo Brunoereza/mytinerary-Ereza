@@ -27,7 +27,6 @@ function Details() {
   let intineraries = useSelector(state=>state.intinerariesReducer.intineraries)
   console.log(cardsDitails)
 
-  // console.log(cardsDitails)
   return (
     <div className="conteiner-card-details">
           <Card sx={{ maxWidth: 345 }}>
@@ -52,7 +51,6 @@ function Details() {
       </CardActionArea>
     </Card>
     <div className="conteiner-itinerary">
-      {/* {intineraries.map(intinerary => <Intinerary key={intinerary._id} data={intinerary} />)} */}
       {intineraries.length > 0 ? intineraries.map(intinerary => <Intinerary key={intinerary._id} data={intinerary}/>) : <Typography sx={{fontSize:"2rem",margin:"5rem"}}>NO ITINERARIES YET!</Typography>}
     </div>
     </div>
