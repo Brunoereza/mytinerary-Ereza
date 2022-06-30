@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles/SignUsers.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -45,8 +46,9 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    <div className='conteiner'>
+      <ThemeProvider theme={theme}>
+      <Container className='conteiner-users' component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -112,5 +114,7 @@ export default function SignIn() {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </div>
+    
   );
 }

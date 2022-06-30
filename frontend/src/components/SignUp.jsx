@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles/SignUsers.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,6 +15,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux'
 import usersActions from '../redux/actions/usersActions'
+import CountrySelect from './Country';
+
 
 function Copyright(props) {
   return (
@@ -42,16 +45,17 @@ export default function SignUp() {
         lastName: event.target[2].value,
         email: event.target[4].value,
         country: event.target[6].value,
-        password: event.target[10].value,
-        imgProfile: event.target[8].value,
+        password: event.target[12].value,
+        imgProfile: event.target[10].value,
         from: "form-signup"
     }
     dispatch(usersActions.signUpUsers(userData))
 }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    <div className='conteiner'>
+      <ThemeProvider  theme={theme}>
+      <Container className='conteiner-users' component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -69,8 +73,8 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
+              <Grid  item xs={12} sm={6}>
+                <TextField 
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -102,14 +106,17 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+
+                <CountrySelect />
+
+                {/* <TextField
                   required
                   fullWidth
                   id="country"
                   label="Country"
                   name="country"
                   autoComplete="family-name"
-                />
+                /> */}
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -159,5 +166,6 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </div> 
   );
 }

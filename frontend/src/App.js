@@ -14,7 +14,7 @@ import {useEffect} from "react"
 import citiesActions from "./redux/actions/citiesActions"
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
-
+import SnackBar from './components/SnackBar';
 
 
 function App(props) {
@@ -27,6 +27,7 @@ function App(props) {
         <div className="App">
              <div className='nav'>
                  <ResponsiveAppBar />
+
                     {/* <Routes>
                       <Route path="cities" element={<Cities />} />
                     </Routes> */}
@@ -38,7 +39,7 @@ function App(props) {
                 <Route path='/signin' element={<SignIn/>} />
                 <Route path='/signup' element={<SignUp/>} />
               </Routes>
-
+              <SnackBar/>
                <Footer />
        </div>
     </>
