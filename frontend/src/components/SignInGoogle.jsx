@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import usersActions from '../redux/actions/usersActions'
 
 
-export default function GoogleSignUp() {
+export default function GoogleSignIn() {
     const dispatch = useDispatch();
 
 
@@ -12,13 +12,14 @@ export default function GoogleSignUp() {
         console.log(response.credential);
         let userObject = jwt_decode(response.credential);
         console.log(userObject);
-        dispatch(usersActions.signUpUsers({
+        dispatch(usersActions.signInUsers({
             firstName: userObject.given_name,
             lastName:userObject.family_name,
             email:userObject.email, 
             country: "Argentina",
             imgProfile:userObject.picture,
             password:userObject.sub, 
+            // role: 'user', 
             from: 'google'
         }))
     }
@@ -26,7 +27,7 @@ export default function GoogleSignUp() {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: '641139363527-q8o6ihv595g61iofpddqq0rt7alqor81.apps.googleusercontent.com',
+            client_id: '613504900859-i5d9rnj6gskrsoik0vv6khlk7gof7v2n.apps.googleusercontent.com',
             callback: handleCallbackResponse
         });
 

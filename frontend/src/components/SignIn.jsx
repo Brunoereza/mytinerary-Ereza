@@ -15,6 +15,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux'
 import usersActions from '../redux/actions/usersActions'
+import GoogleSignIn from './SignInGoogle';
+
 
 function Copyright(props) {
   return (
@@ -40,9 +42,9 @@ export default function SignIn() {
     const logedUser = {
       email: event.target[0].value,
       password: event.target[2].value,
-      from: "form-signup"
+      from: "form-signin"
   }
-  dispatch(usersActions.signUpUsers(logedUser))
+  dispatch(usersActions.signInUsers(logedUser))
   };
 
   return (
@@ -97,6 +99,7 @@ export default function SignIn() {
             >
               Sign In
             </Button>
+            <GoogleSignIn />
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

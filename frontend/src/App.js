@@ -17,11 +17,19 @@ import SignIn from './components/SignIn';
 import SnackBar from './components/SnackBar';
 
 
+
 function App(props) {
   useEffect (()=>{
     props.getCities()
     // eslint-disable-next-line
   },[])
+
+  // useEffect(()=>{
+  //   if(localStorage.getItem('token') !== null){
+  //     const token = localStorage.getItem("token")
+  //     props.VerificationToken(token)
+  //   }
+  // }, [])
   return (
     <>
         <div className="App">

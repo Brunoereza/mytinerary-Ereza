@@ -8,7 +8,7 @@ const usersControllers = require('../controllers/usersControllers')
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
 const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
-const {signUpUsers, signInUsers} = usersControllers
+const {signUpUsers, signInUsers, verifyMail} = usersControllers
 
 
 Router.route('/cities')
@@ -46,5 +46,8 @@ Router.route("/signup")
 
 Router.route("/signin")
 .post(signInUsers)
+
+Router.route("/verify/:string")
+.get(verifyMail)
 
 module.exports = Router
