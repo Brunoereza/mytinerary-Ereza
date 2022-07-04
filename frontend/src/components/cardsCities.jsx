@@ -6,23 +6,20 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import './styles/Cities.css'
 import { Link as LinkRouter } from 'react-router-dom'
-import { useSelector } from "react-redux";
-import NotResults from './NotResults';
 
 
-export default function cardsCities() {
 
-  const cardFilter = useSelector(store => store.citiesReducer.filter)
-  console.log(cardFilter)
+export default function cardsCities({ cardFilter }) {
+
+
   return (
     <>
       <div className='conteiner'>
-
       
       <div className="conteiner-cards">
 
 
-        {cardFilter.lenght > 0 ? cardFilter.map(city => (
+        {cardFilter.map(city => (
           <Card className='cards' sx={{ maxWidth: 345 }} key={city._id}>
             <CardActionArea>
               <CardMedia
@@ -49,7 +46,7 @@ export default function cardsCities() {
             </CardActions>
           </Card>
         )
-        ): <NotResults/>
+        )
         }
       </div>
       </div>
@@ -59,6 +56,9 @@ export default function cardsCities() {
 
   );
 }
+
+
+
 
 
 

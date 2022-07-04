@@ -1,4 +1,3 @@
-
 import '../src/components/styles/App.css';
 import ResponsiveAppBar from './components/AppBar';
 // import Carrousel from './components/carrousel';
@@ -16,7 +15,6 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import SnackBar from './components/SnackBar';
 import usersActions from './redux/actions/usersActions';
-import { Navigate } from 'react-router-dom';
 
 
 
@@ -51,8 +49,6 @@ function App(props) {
                 <Route path='/cities/details/:id' element={<Details />} />
                 <Route path='/signin' element={<SignIn/>} />
                 <Route path='/signup' element={<SignUp/>} />
-                {/* <Route path="/signup" element={ localStorage.getItem('token')? (<Navigate replace to="/"/>): <SignUp/>} />
-        <Route path="/signin" element={localStorage.getItem('token')? (<Navigate replace to="/"/>): <SignIn/>} /> */}
               </Routes>
               <SnackBar/>
                <Footer />
