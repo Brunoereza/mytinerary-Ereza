@@ -1,3 +1,11 @@
+
+.conteiner{
+  background-image: url('../turistas.jpg');
+  background-repeat: no-repeat;
+  background-size:cover; 
+  /* object-fit: contain !important; */
+   background-attachment: fixed; 
+}
 .conteiner-cards{
   min-height: 90vh;
   display: flex;
@@ -6,11 +14,11 @@
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  background-image: url('../turistas.jpg');
+  /* background-image: url('../turistas.jpg');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:cover; */
   /* object-fit: contain !important; */
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   }
   .cards{
     width: 40vh;
@@ -35,16 +43,18 @@
 } */
 /* From uiverse.io by @Alaner-xs */
 .input {
-  color: #8707ff;
-  border: 2px solid #8707ff;
+
+  color: #8d6e63;
+  border: 2px solid #8d6e63;
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
   max-width: 190px;
+
  }
  
  .input:active {
-  box-shadow: 2px 2px 15px #8707ff inset;
+  box-shadow: 2px 2px 15px #8d6e63 inset;
  }
  
  .input:hover {
@@ -56,7 +66,10 @@
   border-top-width: 0.2em;
   background-color: #f1e8e8;
  }
- /* .inputText{
-
-  background-color: #8d6e63;
- } */
+  .inputText{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+ } 

@@ -17,9 +17,7 @@ function Cities(props) {
     
     return(
         <>
-          <div className="inputText">
-           <input type="text" name="text" className="input" placeholder="Type something here...." />
-          </div>
+
           <div>
               {cityFil?.length > 0 ? (<Cards cardFilter={cityFil}/>): (<NotResults/>)}
           </div>
