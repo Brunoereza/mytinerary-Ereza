@@ -17,6 +17,9 @@ import { useDispatch } from 'react-redux'
 import usersActions from '../redux/actions/usersActions'
 import CountrySelect from './Country';
 import GoogleSignUp from './SignUpGoogle';
+import { useState } from 'react';
+import Swal from 'sweetalert2'
+
 
 
 function Copyright(props) {
@@ -36,21 +39,69 @@ const theme = createTheme();
 
 export default function SignUp() {
 
+  const [CountrySelect, setCountrySelect] = useState('')
+
+//   Swal.fire({
+//     title: 'Please Select your country',
+//     input: 'select',
+//     inputOptions: {
+//         'Argentina': 'Argentina',
+//         'Australia': 'Australia',
+//         'Brazil': 'Brazil',
+//         'Chile': 'Chile',
+//         'Colombia': 'Colombia',
+//         'China': 'China',
+//         'Mexico': 'Mexico',
+//         'Germany': 'Germany',
+//         'France': 'France',
+//         'India': 'India',
+//         'Italy': 'Italy',
+//         'Japan': 'Japan',
+//         'Korea': 'Korea',
+//         'Quatar': 'Quatar',
+//         'England': 'England',
+//         'EEUU': 'EEUU',
+//         'Spain': 'Spain',
+//         'Other': 'Other',
+//     },
+//     inputPlaceholder: 'Select your country',
+//     inputAttributes: {
+//         name: 'select-country'
+//     },
+//     showCancelButton: false,
+//     allowOutsideClick: false,
+//     preConfirm: (country) => {
+//       setCountrySelect(country)
+//     },
+//     inputValidator: (value) => {
+//         return new Promise((resolve) => {
+//             if (value === '') {
+//                 resolve('You need to select a country')
+//             } else {
+//                 resolve()
+//             }
+//         })
+//     },
+// }).then((result) => {
+//     if (result.value) {
+//         Swal.close()
+// }
+// })
   const dispatch = useDispatch() 
 
-  const handleSubmit = (event) => {
+  const handleSubmit =  (event) => {
     event.preventDefault()
     console.log(event)
     const userData = {
         firstName: event.target[0].value,
         lastName: event.target[2].value,
         email: event.target[4].value,
-        country: event.target[6].value,
+        country: CountrySelect,
         password: event.target[12].value,
         imgProfile: event.target[10].value,
         from: "form-signup"
     }
-    dispatch(usersActions.signUpUsers(userData))
+   dispatch(usersActions.signUpUsers(userData))
 }
 
   return (
@@ -156,7 +207,7 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <GoogleSignUp />
+            <GoogleSignUp country={CountrySelect} />
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">

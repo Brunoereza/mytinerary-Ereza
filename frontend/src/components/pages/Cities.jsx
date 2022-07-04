@@ -1,37 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Cards from '../cardsCities'
-import NotResults from "../NotResults";
-import {connect} from "react-redux"
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import citiesActions from "../../redux/actions/citiesActions";
 
 
 
 
+function Cities() {
 
-function Cities(props) {
-
-    const [inputValue, setInputValue]= useState ("")
-
-
-    let cityFil = props.cities?.filter(city=> city.name.toLowerCase().startsWith(inputValue.trim().toLowerCase()))
-
-    
+    const [filter, setFilter] = useState('') 
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(citiesActions.filterCities(filter))
+        // eslint-disable-next-line
+    },[filter])
+console.log(filter)
     return(
         <>
-
+        <div className="inputText">
+          <input type="text" name="text" className="input" placeholder="Type something here...." onKeyUp={(e) =>{setFilter(e.target.value)}} />
+        </div>
           <div>
-              {cityFil?.length > 0 ? (<Cards cardFilter={cityFil}/>): (<NotResults/>)}
+              <Cards/>
           </div>
         </>
     );
 }
-const mapStateToProps = (state) => {
-    return{
-        cities: state.citiesReducer.cities, 
-        auxiliar: state.citiesReducer.auxiliar,
-    }
-}
 
-export default connect(mapStateToProps, null)(Cities)
+
+export default Cities
 
 
 

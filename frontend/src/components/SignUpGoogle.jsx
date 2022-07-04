@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import jwt_decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import usersActions from '../redux/actions/usersActions'
+import { PromiseProvider } from 'mongoose';
 
 
-export default function GoogleSignUp() {
+export default function GoogleSignUp(props) {
     const dispatch = useDispatch();
 
 
@@ -16,7 +17,7 @@ export default function GoogleSignUp() {
             firstName: userObject.given_name,
             lastName:userObject.family_name,
             email:userObject.email, 
-            country: "Argentina",
+            country: props.country,
             imgProfile:userObject.picture,
             password:userObject.sub, 
             from: 'google'
