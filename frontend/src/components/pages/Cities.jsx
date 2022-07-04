@@ -18,7 +18,7 @@ function Cities(props) {
     return(
         <>
           <div className="inputText">
-              <input onKeyUp={(e)=>{setInputValue(e.target.value)}} type="text" className="input" title="serch"></input>
+           <input type="text" name="text" className="input" placeholder="Type something here...." />
           </div>
           <div>
               {cityFil?.length > 0 ? (<Cards cardFilter={cityFil}/>): (<NotResults/>)}

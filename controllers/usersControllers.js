@@ -153,41 +153,17 @@ const usersControllers ={
         }
     },
 
-    SignOut: async (req, res) => {
-        console.log('signOut')
-        console.log(req.body)
-        const email = req.body.email
-        const user = await User.findOne({email})
-        await user
-        res.json({
-            success: true,  
-            message:`${email}log out`})
-    },
-
-    // VerificationToken:(req, res) => {
-    //     if(req.user){
-    //         res.json({success:true,
-    //         response:{id:req.userExist.id, firstName, email:req.userExist.email, from:token},
-    //         message:'Bienvenido nuevamente '+req.userExist.firstName})
-    //     }else{
-    //         res.json({success:false,
-    //         message:'Por favor realiza nuevamente el signIn'})
-    //     }
-    // }
-
     VerificationToken:(req, res) => {
-        const user = {
-            id: req.user.id,
-            email: req.user.email,
-            firstName: req.user.firstName,
-            imgProfile: req.user.imgProfile,
-            role: req.user.role,
-            from: "token"}
-        //console.log(req.user)
+
         if (!req.err) {
+            console.log(req.err);
         res.json({
             success: true,
-            response: {user},
+            response: {id: req.user.id,
+                      firstName:req.user.firstName,
+                      email:req.user.email,
+                      photo:req.user.photo,
+                      from:"token"},
             message: "Hi! Welcome back "+req.user.firstName}) 
         } else {
             res.json({
@@ -195,6 +171,9 @@ const usersControllers ={
                 message:"sign in please!"}) 
         }
     }
+
 }
 
 module.exports = usersControllers
+
+

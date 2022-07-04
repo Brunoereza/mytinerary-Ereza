@@ -51,8 +51,8 @@ Router.route("/signin")
 // Router.route("/signout")
 // .post(SignOut)
 
-Router.route('/signout')
-.post(SignOut)
+// Router.route('/signout')
+// .post(SignOut)
 
 Router.route("/verify/:string")
 .get(verifyMail)
