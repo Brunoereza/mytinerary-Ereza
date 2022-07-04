@@ -23,8 +23,7 @@ const settings = [{to:'/signin' , name: 'Sign in'},{to:'/signup', name: 'Sign up
 
 const  ResponsiveAppBar = (props) => {
   const user = useSelector(store => store.usersReducers.user)
-console.log(user)
-console.log(props.user)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -110,7 +109,7 @@ console.log(props.user)
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width:"10vw" }}>
-              {props.user ? <Avatar alt="photoUser" src={props.user.response.userData.imgProfile} /> : <Avatar src="/static/images/avatar/2.jpg" />}
+              {props.user ? <Avatar alt="photoUser" src={props.user.imgProfile} /> : <Avatar src="/static/images/avatar/2.jpg" />}
               </IconButton>
             </Tooltip>
   

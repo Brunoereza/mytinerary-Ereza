@@ -1,4 +1,4 @@
-const passport = require("passport")
+const passport = require("passport")//se usa cuando el usuario recarga la pagina para no perder el usuario
 const jwtStrategy = require("passport-jwt").Strategy //estrategia
 const extractJwt = require("passport-jwt").ExtractJwt //
 

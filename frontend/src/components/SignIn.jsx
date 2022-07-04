@@ -37,7 +37,7 @@ const theme = createTheme();
 export default function SignIn() {
   const navigate = useNavigate()
   const dispatch = useDispatch() 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {//cuando el usuario hace click se ejecuta la funcion
     event.preventDefault();
     console.log(event)
     // const data = new FormData(event.currentTarget);
@@ -45,8 +45,8 @@ export default function SignIn() {
       email: event.target[0].value,
       password: event.target[2].value,
       from: "form-signin"
-  }
-  await dispatch(usersActions.signInUsers(logedUser))
+  }//se harcodea el from
+  await dispatch(usersActions.signInUsers(logedUser))//el dispatch llama de la useraction a la accion signin user y le pasa un objeto, ese objeto contiene un email, un password y un from
   const token = localStorage.getItem('token')//recupero el token de local store si esta seteado
   if (token) {// si esta el token lo redirecciono al Navigate
       console.log('navigate')

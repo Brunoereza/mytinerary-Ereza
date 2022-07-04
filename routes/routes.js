@@ -9,7 +9,7 @@ const passport = require('../config/passport');
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
 const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
-const {signUpUsers, signInUsers, verifyMail, SignOut, VerificationToken} = usersControllers
+const {signUpUsers, signInUsers, verifyMail, signOut, VerificationToken} = usersControllers
 
 
 Router.route('/cities')
@@ -46,16 +46,16 @@ Router.route("/signup")
 .post(validator, signUpUsers)
 
 Router.route("/signin")
-.post(signInUsers)
+.post(signInUsers)//
 
 // Router.route("/signout")
 // .post(SignOut)
 
-// Router.route('/signout')
-// .post(SignOut)
+Router.route('/signout')
+.post(signOut)
 
-Router.route("/verify/:string")
-.get(verifyMail)
+Router.route("/verify/:string")//estos dos son parametros
+.get(verifyMail)//llama al controlador
 
 Router.route('/signintoken')
 .get(passport.authenticate('jwt',{ session: false }),VerificationToken)

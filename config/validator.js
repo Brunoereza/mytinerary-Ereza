@@ -59,7 +59,7 @@ const validator = (req, res, next) => {
     if (validation.error) {
         return res.json({ success: false, from: 'validator', message: validation.error.details, test: validation })
     }
-    next()
+    next()// va el siguiente controlador, en mi caso es a signUpUsers, solo si el validador esta correcto
 }
 
 module.exports = validator
