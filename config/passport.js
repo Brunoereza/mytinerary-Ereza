@@ -1,4 +1,4 @@
-const passport = require("passport")//se usa cuando el usuario recarga la pagina para no perder el usuario
+const passport = require("passport")//es un midelwar se usa cuando el usuario recarga la pagina para no perder el usuario
 const jwtStrategy = require("passport-jwt").Strategy //estrategia
 const extractJwt = require("passport-jwt").ExtractJwt //
 
@@ -11,7 +11,7 @@ module.exports = passport.use(
             secretOrKey: process.env.SECRET_KEY
         },
         async (jwt_payload, done) => {
-            //console.log(jwt_payload)
+            
             try {
                 const user = await User.findOne({ _id: jwt_payload.id })
                 if (user) {
@@ -21,7 +21,7 @@ module.exports = passport.use(
                 }
             }
             catch (error) {
-                console.log(error)
+                
                 return done(error, false)
             }
         }
