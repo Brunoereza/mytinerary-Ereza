@@ -9,27 +9,31 @@ import {Routes, Route} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Cities from './components/pages/Cities';
 import Details from './components/pages/Details';
-import {connect} from "react-redux"
+import {connect, useDispatch} from "react-redux"
 import {useEffect} from "react"
 import citiesActions from "./redux/actions/citiesActions"
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import SnackBar from './components/SnackBar';
+import usersActions from './redux/actions/usersActions';
 
 
 
 function App(props) {
+
+  const dispatch = useDispatch()
   useEffect (()=>{
     props.getCities()
     // eslint-disable-next-line
   },[])
 
-  // useEffect(()=>{
-  //   if(localStorage.getItem('token') !== null){
-  //     const token = localStorage.getItem("token")
-  //     props.VerificationToken(token)
-  //   }
-  // }, [])
+  
+  useEffect(()=>{
+    if(localStorage.getItem('token') !== null){
+      const token = localStorage.getItem("token")
+      dispatch(usersActions.VerificationToken(token))
+    }
+  }, [])
   return (
     <>
         <div className="App">

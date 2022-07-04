@@ -19,7 +19,7 @@ const usersControllers ={
                     res.json({
                         success: false,
                         from: from,
-                        message: "Ya has realizado tu SingUp de esta forma por favor realiza SignIn"
+                        message: "You have already made your SingUp in this way please perform SignIn"
                     })
                 } else {
                     const passwordHasheada = bcryptjs.hashSync(password, 10)
@@ -29,7 +29,7 @@ const usersControllers ={
                     res.json({
                         success: true,
                         from: from,
-                        message: "Agregamos " + from + " a tus medios para realizar signIn"
+                        message: "Add " + from + " to your media to make signIn"
                     })
                 }
             } else { //si no existe el usuario
@@ -53,7 +53,7 @@ const usersControllers ={
                     res.json({
                         success: true,
                         from: from,
-                        message: "Felicitaciones se ha creado tu usuario con " + from
+                        message: "Congratulations your user has been created with " + from
                     })
                 } else {
                     await newUser.save() 
@@ -62,12 +62,12 @@ const usersControllers ={
                     res.json({
                         success: true,
                         from: from,
-                        message: "Te enviamos un email para validarlo, por favor verifica tu casilla para completar el signUp"
+                        message: "We send you an email to validate it, please check your box to complete the signUp"
                     })
                 }
             }
         } catch (error) {
-            res.json({ success: false, message: "Algo a salido mal, intentalo en unos minutos", console:console.log(error)})
+            res.json({ success: false, message: "Something has gone wrong, try it in a few minutes", console:console.log(error)})
             
         }
 
@@ -80,7 +80,7 @@ const usersControllers ={
             const userExist = await User.findOne({ email })
             // const indexpass = userExist.from.indexOf(from)
             if (!userExist) {
-                res.json({success: false, message: "Tu ususario no ha sido registrado, realiza signUp"})
+                res.json({success: false, message: "Your user has not been registered, perform signUp"})
             }else{
                 if(from !== "form-Signup"){
                     let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
@@ -101,13 +101,13 @@ const usersControllers ={
                             success: true,
                             from: from,
                             response: {token, userData},
-                            message: "Bienvenido nuevamente " + userData.firstName,
+                            message: "Welcome back " + userData.firstName,
                         })
                     } else {
                         res.json({
                             success: false,
                             from: from,
-                            message: "No has realizado el registro con " + from + " si quieres ingresar con este metodo debes hacer el signUp con " + from
+                            message: "You didn't register with " + from + " if you want to enter with this method you must make the signUp with " + from
                         })
                     }
                 }else {
@@ -123,19 +123,19 @@ const usersControllers ={
                             success: true,
                             from: from,
                             response: { token, userData },
-                            message: "Bienvenido Nuevamente " + userData.fullName,
+                            message: "Welcome Back " + userData.firstName,
                         })
                     }else{
                         res.json({
                             success: false,
                             from: from,
-                            message: "El usuario o el password no coinciden",
+                            message: "The user or password does not match",
                         })
                     }
                 }
             }
         } catch (error){
-            res.json({ success: false, message: "Algoa salido mal, intentalo en unos minutos", console:console.log(error) })
+            res.json({ success: false, message: "Something has gone wrong, try it in a few minutes", console:console.log(error) })
         }
     },
     verifyMail: async (req, res) => {
@@ -153,26 +153,48 @@ const usersControllers ={
         }
     },
 
+    SignOut: async (req, res) => {
+        console.log('signOut')
+        console.log(req.body)
+        const email = req.body.email
+        const user = await User.findOne({email})
+        await user
+        res.json({
+            success: true,  
+            message:`${email}log out`})
+    },
+
     // VerificationToken:(req, res) => {
-    //     const user = {
-    //         id: req.user.id,
-    //         mail: req.user.mail,
-    //         nameUser: req.user.nameUser,
-    //         photoUser: req.user.photoUser,
-    //         role: req.user.role,
-    //         from: "token"}
-    //     //console.log(req.user)
-    //     if (!req.err) {
-    //     res.json({
-    //         success: true,
-    //         response: {user},
-    //         message: "Hi! Welcome back "+req.user.nameUser}) 
-    //     } else {
-    //         res.json({
-    //             success:false,
-    //             message:"sign in please!"}) 
+    //     if(req.user){
+    //         res.json({success:true,
+    //         response:{id:req.userExist.id, firstName, email:req.userExist.email, from:token},
+    //         message:'Bienvenido nuevamente '+req.userExist.firstName})
+    //     }else{
+    //         res.json({success:false,
+    //         message:'Por favor realiza nuevamente el signIn'})
     //     }
     // }
+
+    VerificationToken:(req, res) => {
+        const user = {
+            id: req.user.id,
+            email: req.user.email,
+            firstName: req.user.firstName,
+            imgProfile: req.user.imgProfile,
+            role: req.user.role,
+            from: "token"}
+        //console.log(req.user)
+        if (!req.err) {
+        res.json({
+            success: true,
+            response: {user},
+            message: "Hi! Welcome back "+req.user.firstName}) 
+        } else {
+            res.json({
+                success:false,
+                message:"sign in please!"}) 
+        }
+    }
 }
 
 module.exports = usersControllers

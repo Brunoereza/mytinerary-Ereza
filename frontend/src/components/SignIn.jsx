@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux'
 import usersActions from '../redux/actions/usersActions'
 import GoogleSignIn from './SignInGoogle';
+import { useNavigate } from 'react-router-dom';
 
 
 function Copyright(props) {
@@ -34,8 +35,9 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate()
   const dispatch = useDispatch() 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(event)
     // const data = new FormData(event.currentTarget);
@@ -44,7 +46,13 @@ export default function SignIn() {
       password: event.target[2].value,
       from: "form-signin"
   }
-  dispatch(usersActions.signInUsers(logedUser))
+  await dispatch(usersActions.signInUsers(logedUser))
+  const token = localStorage.getItem('token')//recupero el token de local store si esta seteado
+  if (token) {// si esta el token lo redirecciono al Navigate
+      console.log('navigate')
+      navigate("/")
+    }
+  // dispatch(usersActions.signInUsers(logedUser))
   };
 
   return (

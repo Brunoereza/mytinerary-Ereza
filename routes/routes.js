@@ -3,12 +3,13 @@ const validator = require ('../config/validator')
 const citiesControllers = require('../controllers/citiesControllers');
 const intinerariesControllers = require('../controllers/intinerariesControllers');
 const usersControllers = require('../controllers/usersControllers')
-
+const passport = require('../config/passport');
+// const { VerificationToken } = require('../controllers/usersControllers');
 
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
 const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
-const {signUpUsers, signInUsers, verifyMail} = usersControllers
+const {signUpUsers, signInUsers, verifyMail, SignOut, VerificationToken} = usersControllers
 
 
 Router.route('/cities')
@@ -47,7 +48,16 @@ Router.route("/signup")
 Router.route("/signin")
 .post(signInUsers)
 
+// Router.route("/signout")
+// .post(SignOut)
+
+Router.route('/signout')
+.post(SignOut)
+
 Router.route("/verify/:string")
 .get(verifyMail)
+
+Router.route('/signintoken')
+.get(passport.authenticate('jwt',{ session: false }),VerificationToken)
 
 module.exports = Router
