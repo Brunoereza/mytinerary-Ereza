@@ -14,7 +14,7 @@ export default function cardsCities({ cardFilter }) {
 
   return (
     <>
-      <div className='conteiner'>
+      
       
       <div className="conteiner-cards">
 
@@ -49,7 +49,7 @@ export default function cardsCities({ cardFilter }) {
         )
         }
       </div>
-      </div>
+      
 
     </>
 

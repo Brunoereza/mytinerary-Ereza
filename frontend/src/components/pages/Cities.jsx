@@ -17,11 +17,12 @@ function Cities(props) {
     
     return(
         <>
-         <div className="inputText">
-         <input onKeyUp={(e)=>{setInputValue(e.target.value)}} type="text" className="input" title="serch"></input>
-         </div>
+
          
           <div>
+          <div className="inputText">
+         <input onKeyUp={(e)=>{setInputValue(e.target.value)}} type="text" className="input" title="serch" placeholder="Type what you want to search for"></input>
+         </div>
               {cityFil?.length > 0 ? (<Cards cardFilter={cityFil}/>): (<NotResults/>)}
           </div>
         </>
