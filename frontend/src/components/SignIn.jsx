@@ -39,8 +39,7 @@ export default function SignIn() {
   const dispatch = useDispatch() 
   const handleSubmit = async (event) => {//cuando el usuario hace click se ejecuta la funcion
     event.preventDefault();
-    console.log(event)
-    // const data = new FormData(event.currentTarget);
+
     const logedUser = {
       email: event.target[0].value,
       password: event.target[2].value,

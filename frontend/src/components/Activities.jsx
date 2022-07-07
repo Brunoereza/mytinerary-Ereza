@@ -25,9 +25,7 @@ export default function Activities({activities}) {
            <Typography gutterBottom variant="h5" component="div">
              {a.nameActivity}
            </Typography>
-           {/* <Typography variant="body2" color="text.secondary">
-             {a
-           </Typography> */}
+
          </CardContent>
        </CardActionArea>
         )

@@ -14,15 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 // import logo from '../image/logo.png';
 import {Link as LinkRouter} from "react-router-dom"
 import SignOut from './SignOut';
-import { connect, useSelector } from 'react-redux';
-import PersonIcon from '@mui/icons-material/Person'
+import { connect } from 'react-redux';
+
 
 
 const navBarOptions=[{ nombre: 'Home', to: '/' },{ nombre: 'Cities', to: '/cities' }];
 const settings = [{to:'/signin' , name: 'Sign in'},{to:'/signup', name: 'Sign up'}];
 
 const  ResponsiveAppBar = (props) => {
-  const user = useSelector(store => store.usersReducers.user)
+  // const user = useSelector(store => store.usersReducers.user)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

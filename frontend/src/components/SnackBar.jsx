@@ -1,8 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Snackbar from '@mui/material/Snackbar'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
 import {useDispatch, useSelector} from 'react-redux'
 import './styles/Cities.css'
 
@@ -14,6 +12,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 function SnackBar() {
+    // eslint-disable-next-line
     const [state, setState] = React.useState({
         vertical: 'top',
         horizontal: 'center',
@@ -24,7 +23,7 @@ function SnackBar() {
 
     const dispatch = useDispatch()
     const snack = useSelector(store => store.usersReducers.alert)
-    console.log(snack)
+
 
     const handleClose = () => {
         dispatch({

@@ -40,7 +40,6 @@ export default function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
     const userData = {
         firstName: event.target[0].value,
         lastName: event.target[2].value,

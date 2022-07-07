@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import axios from 'axios'
 import '../styles/Details.css';
 import {useDispatch, useSelector} from 'react-redux';
 import citiesActions from '../../redux/actions/citiesActions';
@@ -19,10 +18,12 @@ function Details() {
 
   useEffect(()=>{
       dispatch(citiesActions.getOneCity(id))
-  },[id])
+      // eslint-disable-next-line
+  },[])
   useEffect(()=>{
     dispatch(intinerariesActions.getItineraryByCity(id))
-},[id])
+    // eslint-disable-next-line
+},[])
   let cardsDitails = useSelector(state=>state.citiesReducer.oneCity)
   let intineraries = useSelector(state=>state.intinerariesReducer.intineraries)
   

@@ -10,16 +10,14 @@ const sendEmail = async (email, string) => { //depende del mail que ingresa el u
         process.env.GOOGLE_CLIENTSECRET,
         "https://developers.google.com/oauthplayground"
     )
-    console.log("la constatente myOAuth2Client")
-    console.log(myOAuth2Client)
+
 
     myOAuth2Client.setCredentials({
         refresh_token: process.env.GOOGLE_REFRESHTOKEN
     })
 
     const accessToken = await myOAuth2Client.getAccessToken()
-    console.log("console de accessToken")
-console.log(accessToken)
+
     const transporter = nodemailer.createTransport({//transporter(metodo de nodemeiler) es el que entrega el mail
         service: "gmail",
         auth: {
@@ -34,8 +32,7 @@ console.log(accessToken)
             rejectUnauthorized: false //para evitar que bloquee el antivirus
         }
     })
-    console.log("console de transporter")
-    console.log(transporter)
+
 
     let mailOptions = {//es lo que voy a enviar
         from: process.env.USER,

@@ -17,11 +17,11 @@ import './styles/Footer.css'
 const pages = [{nombre:'Home', to:'/'},
   {nombre:'Cities', to:'/cities' }
  ];
-const settings = ['Profile', 'Account', 'SignIn', 'Logout'];
+// const settings = ['Profile', 'Account', 'SignIn', 'Logout'];
 
 const Footer = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

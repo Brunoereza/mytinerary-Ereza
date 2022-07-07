@@ -9,8 +9,7 @@ const usersControllers ={
         let { firstName, lastName, email, password, from, country, imgProfile } = req.body.userData
         //del user data necesito lo que tiene adentro
         //el req.body.userData
-        // console.log(req.body.userData)
-        // const test = req.body.test
+
         try {
             const userExist = await User.findOne({ email })//busca si los email son reales, pregunta
             const verification = false //por default
@@ -50,7 +49,7 @@ const usersControllers ={
                     country:country,
                     imgProfile:imgProfile
                 })
-                console.log(newUser)
+                // console.log(newUser)
                 if (from !== "form-signup") { // si el from es distinto a signup, significa que se registro su cuenta por una red social y no hace falrta verificacion
                     // newUser.verification = true
                     await newUser.save()// el metodo.save se encarga de que el usuario aparezca en mongo con todos sus datos
