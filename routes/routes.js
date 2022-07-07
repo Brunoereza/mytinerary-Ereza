@@ -4,12 +4,14 @@ const citiesControllers = require('../controllers/citiesControllers');
 const intinerariesControllers = require('../controllers/intinerariesControllers');
 const usersControllers = require('../controllers/usersControllers')
 const passport = require('../config/passport');
+const activitiesControllers = require('../controllers/activitiesControllers')
 // const { VerificationToken } = require('../controllers/usersControllers');
 
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
 const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
 const {signUpUsers, signInUsers, verifyMail, signOut, VerificationToken} = usersControllers
+const {getActivities, getOneActivity, getActivityByIntineray, addActivity, modifyActivity} = activitiesControllers
 
 
 Router.route('/cities')
@@ -46,13 +48,24 @@ Router.route("/signup")
 .post(validator, signUpUsers)
 
 Router.route("/signin")
-.post(signInUsers)//
-
-// Router.route("/signout")
-// .post(SignOut)
+.post(signInUsers)
 
 Router.route('/signout')
 .post(signOut)
+
+//ruta activities
+
+Router.route("/activity")
+.get(getActivities)
+.post(addActivity)
+
+Router.route('/activity/:id')
+.put(modifyActivity)
+
+Router.route("/getactivitybyintineray/:id")
+.get(getActivityByIntineray)
+
+//rutas verificador mail y token
 
 Router.route("/verify/:string")//estos dos son parametros
 .get(verifyMail)//llama al controlador

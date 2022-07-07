@@ -17,7 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import Activities from './Activities';
 
 
 const ExpandMore = styled((props) => {
@@ -33,7 +33,6 @@ const ExpandMore = styled((props) => {
 
 export default function Intinerary({data}) {
   const [expanded, setExpanded] = useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -89,11 +88,8 @@ export default function Intinerary({data}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>In repair:</Typography>
-
-          <Typography>
-          No information on the activities.
-          </Typography>
+          <Activities activities = {data.activities} />
+          {console.log(data)}
         </CardContent>
       </Collapse>
     </Card>

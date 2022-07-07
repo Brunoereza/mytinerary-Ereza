@@ -73,5 +73,19 @@
   background-color: #f1e8e8;
  }
    .inputText{
-  background-color: #8d6e63;
+    background-image: url('../image/38628688905_fb815b2764_o.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* object-fit: contain !important; */
+    background-attachment: fixed;
  }  
+
+ .snackbar{
+  color:black;
+  background-color: burlywood;
+ }
+ .MuiSnackbarContent-message{
+  background-color: aliceblue;
+ }
+
+

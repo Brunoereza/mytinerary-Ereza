@@ -25,8 +25,8 @@ function Details() {
 },[id])
   let cardsDitails = useSelector(state=>state.citiesReducer.oneCity)
   let intineraries = useSelector(state=>state.intinerariesReducer.intineraries)
-  console.log(cardsDitails)
-
+  
+ 
   return (
     <div className="conteiner-card-details">
           <Card sx={{ maxWidth: 345 }}>

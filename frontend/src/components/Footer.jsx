@@ -39,7 +39,7 @@ const Footer = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
            <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-           <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
+           <img src='./image/Logo2.png' alt='logo' /> 
            </Box>
            
 
@@ -84,7 +84,7 @@ const Footer = () => {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, width:"100vw", justifyContent:"center", padding:1 }}>
-          <img src={process.env.PUBLIC_URL+'/image/Logo2.png'} alt='logo' /> 
+          <img src='./image/Logo2.png' alt='logo' /> 
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', width:"100vw", justifyContent:"center" } }}>
             {pages.map((page, index) => (

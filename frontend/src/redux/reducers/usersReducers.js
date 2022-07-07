@@ -22,11 +22,6 @@ const usersReducers = (state = initialState, action) => {
                 alert: action.payload
             }
 
-        //  case 'SUCCES':
-        //      return {
-        //          ...state,
-        //          success: action.payload
-        //      }
              default:
                 return state
     }
