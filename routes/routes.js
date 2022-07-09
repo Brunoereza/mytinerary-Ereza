@@ -5,13 +5,14 @@ const intinerariesControllers = require('../controllers/intinerariesControllers'
 const usersControllers = require('../controllers/usersControllers')
 const passport = require('../config/passport');
 const activitiesControllers = require('../controllers/activitiesControllers')
-// const { VerificationToken } = require('../controllers/usersControllers');
+const commentsControllers = require('../controllers/commentsControllers')
 
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers
-const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity}= intinerariesControllers
+const {getIntineraries, getOneIntinerary, addIntinerary, modifyIntinerary, removeIntinerary, multiplesIntineraries,  getItineraryByCity, likeDislike}= intinerariesControllers
 const {signUpUsers, signInUsers, verifyMail, signOut, VerificationToken} = usersControllers
 const {getActivities, getOneActivity, getActivityByIntineray, addActivity, modifyActivity} = activitiesControllers
+const {addComment, modifyComment, deleteComment} = commentsControllers
 
 
 Router.route('/cities')
@@ -41,6 +42,9 @@ Router.route("/multiplesIntineraries")
 
 Router.route("/intinerarybycity/:id")
 .get(getItineraryByCity)
+
+Router.route("/intineraries/likes/:id")
+.put(passport.authenticate('jwt',{ session:false }),likeDislike)
 
 //ruta signUsers
 
@@ -72,5 +76,14 @@ Router.route("/verify/:string")//estos dos son parametros
 
 Router.route('/signintoken')
 .get(passport.authenticate('jwt',{ session: false }),VerificationToken)
+
+//rutas comentarios
+
+Router.route('/intinerary/comment')
+.post(passport.authenticate("jwt",{session: false}), addComment)
+.put(passport.authenticate("jwt",{session: false}), modifyComment)
+
+Router.route('./intinerary/comment/:id')
+.post(passport.authenticate("jwt",{session: false}), deleteComment)
 
 module.exports = Router

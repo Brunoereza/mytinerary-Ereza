@@ -1,5 +1,6 @@
 const initialState = {
-    intineraries: []
+    intineraries: [],
+    // intinerarybycity: []
 }
 
 const intinerariesReducer = (state=initialState, action) => {

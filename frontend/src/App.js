@@ -47,7 +47,7 @@ function App(props) {
                 <Route path='/' element={<Home />} />
                 <Route path='/cities' element={<Cities />} />
                 <Route path='/cities/details/:id' element={<Details />} />
-                <Route path='/signin' element={<SignIn/>} />
+                <Route path='/signin' element={<SignIn />} />
                 <Route path='/signup' element={<SignUp/>} />
               </Routes>
               <SnackBar/>

@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {Link as LinkRouter} from "react-router-dom"
 import SignOut from './SignOut';
 import { connect } from 'react-redux';
+import './image/Logo2.png'
 
 
 

@@ -10,14 +10,16 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Activities from './Activities';
+import { useSelector, useDispatch } from 'react-redux';
+import intinerariesActions from '../redux/actions/intinerariesActions';
 
 
 const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
+   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
@@ -29,11 +31,19 @@ const ExpandMore = styled((props) => {
 
 export default function Intinerary({data}) {
   const [expanded, setExpanded] = useState(false);
+  const dispatch = useDispatch()
+  const [reload,setReload] = useState(false)
+  const userLogin = useSelector(store => store.usersReducers.user)
+  console.log(userLogin)
   const handleExpandClick = () => {
-    setExpanded(!expanded);
+  setExpanded(!expanded);
   };
+  async function likeOrDislikes(event) {
+    await dispatch(intinerariesActions.likeDislike(event.target.id))//con el dispatch traigo la accion de likeOrDislikes de mis actions, escucha el event.target.id al dar click
+    setReload(!reload)
+}
 
-
+console.log(data.likes)
   return (
 
 
@@ -67,12 +77,14 @@ export default function Intinerary({data}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        {/* {userLogin?       
+          ({data.likes.includes(userLogin?.user.id)?
+          <FavoriteIcon sx={{color:'red'}} />       
+        :       
+           <FavoriteBorderIcon />})                        
+        :        
+        (<FavoriteBorderIcon />
+        )} */}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

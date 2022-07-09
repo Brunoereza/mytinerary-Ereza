@@ -26,7 +26,7 @@ function Details() {
 },[])
   let cardsDitails = useSelector(state=>state.citiesReducer.oneCity)
   let intineraries = useSelector(state=>state.intinerariesReducer.intineraries)
-  
+  console.log(intineraries)
  
   return (
     <div className="conteiner-card-details">
