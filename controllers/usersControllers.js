@@ -78,7 +78,7 @@ const usersControllers ={
     
     
     signInUsers: async (req, res) => {
-        const { email, password, from } = req.body.logedUser //desestructura lo que trae por body// logedUser trae email, password y from que metimos en el front
+        const { email, password, from } = req.body.logedUser 
         try {//de mi coleccion user verifico con findOne si el email existe, si existe lo guarda en la constante UserExist
             const userExist = await User.findOne({ email })
             // const indexpass = userExist.from.indexOf(from)

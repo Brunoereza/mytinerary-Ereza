@@ -1,6 +1,6 @@
 const initialState = {
     intineraries: [],
-    // intinerarybycity: []
+    getItineraryByCity: []
 }
 
 const intinerariesReducer = (state=initialState, action) => {
@@ -10,6 +10,7 @@ const intinerariesReducer = (state=initialState, action) => {
                 ...state,
                 intineraries: action.payload
             }
+  
             default:
                 return state
     }

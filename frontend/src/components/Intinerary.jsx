@@ -9,13 +9,14 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Activities from './Activities';
-import { useSelector, useDispatch } from 'react-redux';
-import intinerariesActions from '../redux/actions/intinerariesActions';
+// import { useSelector, useDispatch } from 'react-redux';
+// import intinerariesActions from '../redux/actions/intinerariesActions';
+import { LikeButton } from './LikeButton';
 
 
 const ExpandMore = styled((props) => {
@@ -31,19 +32,10 @@ const ExpandMore = styled((props) => {
 
 export default function Intinerary({data}) {
   const [expanded, setExpanded] = useState(false);
-  const dispatch = useDispatch()
-  const [reload,setReload] = useState(false)
-  const userLogin = useSelector(store => store.usersReducers.user)
-  console.log(userLogin)
   const handleExpandClick = () => {
   setExpanded(!expanded);
   };
-  async function likeOrDislikes(event) {
-    await dispatch(intinerariesActions.likeDislike(event.target.id))//con el dispatch traigo la accion de likeOrDislikes de mis actions, escucha el event.target.id al dar click
-    setReload(!reload)
-}
 
-console.log(data.likes)
   return (
 
 
@@ -77,15 +69,9 @@ console.log(data.likes)
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* {userLogin?       
-          ({data.likes.includes(userLogin?.user.id)?
-          <FavoriteIcon sx={{color:'red'}} />       
-        :       
-           <FavoriteBorderIcon />})                        
-        :        
-        (<FavoriteBorderIcon />
-        )} */}
+        <LikeButton />
         <ExpandMore
+
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
@@ -94,6 +80,7 @@ console.log(data.likes)
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
+      
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Activities activities = {data.activities} />

@@ -24,7 +24,8 @@ const intinerariesActions = {
                 console.log(error)
             }
         }
-    }
+    },
+
 }
 
 export default intinerariesActions;

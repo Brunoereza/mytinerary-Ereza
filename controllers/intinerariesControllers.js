@@ -109,8 +109,8 @@ const intinerariesControllers = {
     },
 
     getItineraryByCity: async(req, res) => {
-        let itineraries = [];
         const id = req.params.id;
+        let itineraries;
         const error = null;
         try{
             itineraries = await Intinerary.find({ city : id })
@@ -124,6 +124,21 @@ const intinerariesControllers = {
             error: error
         })
     },
+
+    // getOneItineraryByCity: async (req, res) => {
+    //     const id = req.params.id
+    //     let itineraries
+    //     let error = null
+    //     try {
+    //         itineraries = await Itineraries.find({ city: id }).populate("activities").populate("comments.userId", "photoUser")
+    //     } catch (err) { error = err }
+    //     res.json({
+    //         response: error ? 'ERROR' : itineraries,
+    //         success: error ? false : true,
+    //         error: error
+    //     })
+
+    // },
 
     likeDislike: async (req, res) => {
         const id = req.params.id //LLEGA POR PARAMETRO DESDE AXIOS
